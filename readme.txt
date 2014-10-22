@@ -32,6 +32,10 @@ Get your facebook posts on your Wordpress website in a easy way. Features in Eas
 
 Your facebook id can be found in the url of your facebook page, for example: https://www.facebook.com/bbcnews, is this example 'bbcnews' is the facebook id.
 
+== Screenshots ==
+
+1. Example of how Easy Facebook feed looks in action.
+
 == Changelog ==
 
 = 1.0 =
