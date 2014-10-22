@@ -21,11 +21,12 @@ Get your facebook posts on your wordpress website in a easy way.
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
+Installation
+-------------
 1. Upload `easy-facebook-feed` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Place `[easy_facebook_feed]` on your page
+1. Thats it, you are done!
 
 == Frequently Asked Questions ==
 
