@@ -12,7 +12,7 @@ With this plugin you can get your facebook posts on your wordpress website.
 
 == Description ==
 
-Get your facebook posts on your wordpress website in a easy way.
+Get your facebook posts on your Wordpress website in a easy way. Features in Easy Facebook feed include:
 
 *   Responsive layout.
 *   Displays shared links, video's, status updates and photo's.
@@ -21,8 +21,6 @@ Get your facebook posts on your wordpress website in a easy way.
 
 == Installation ==
 
-Installation
--------------
 1. Upload `easy-facebook-feed` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Place `[easy_facebook_feed]` on your page
@@ -30,9 +28,9 @@ Installation
 
 == Frequently Asked Questions ==
 
-Question: Where can I find my facebook id?
+= Where can I find my facebook id? =
 
-Answer: Your facebook id can be found in the url of your facebook page, for example: https://www.facebook.com/bbcnews, is this example 'bbcnews' is the facebook id.
+Your facebook id can be found in the url of your facebook page, for example: https://www.facebook.com/bbcnews, is this example 'bbcnews' is the facebook id.
 
 == Changelog ==
 
