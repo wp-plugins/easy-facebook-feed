@@ -10,6 +10,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 With this plugin you can get your facebook posts on your wordpress website.
 
+== Description ==
+
+Get your facebook posts on your wordpress website in a easy way.
+
+*   Responsive layout.
+*   Displays shared links, video's, status updates and photo's.
+*   You can adjust the number of posts.
+*	Easy to use.
+
 == Installation ==
 
 This section describes how to install the plugin and get it working.
