@@ -16,8 +16,9 @@ With this plugin you can get your facebook posts on your wordpress website.
 Get your facebook posts on your Wordpress website in a easy way. Features in Easy Facebook feed include:
 
 *   Responsive layout.
+*	Uses the colors of your theme
 *   Displays shared links, video's, status updates and photo's.
-*   You can adjust the number of posts.
+*   Adjustable number of posts.
 *	Easy to use.
 
 == Installation ==
