@@ -26,7 +26,7 @@ Installation
 1. Upload `easy-facebook-feed` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Place `[easy_facebook_feed]` on your page
-1. Thats it, you are done!
+1. Thats it, you are done! View the page to see the result.
 
 == Frequently Asked Questions ==
 
@@ -36,5 +36,5 @@ Answer: Your facebook id can be found in the url of your facebook page, for exam
 
 == Changelog ==
 
-1.0 =
+= 1.0 =
 * First release
