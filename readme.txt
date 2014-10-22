@@ -18,7 +18,7 @@ Get your facebook posts on your Wordpress website in a easy way. Features in Eas
 
 *   Responsive layout.
 *	Uses the colors of your theme
-*   Displays shared links, video's, status updates and photo's.
+*   Displays shared links, video's, status updates and photo's from your Facebook page.
 *   Adjustable number of posts.
 *	Easy to use.
 
