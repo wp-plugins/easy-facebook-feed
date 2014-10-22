@@ -1,5 +1,6 @@
 === Easy facebook feed ===
 Contributors: timwass
+Author: Tim Wassenburg
 Donate link: http://stormware.nl
 Tags: facebook, feed
 Requires at least: 3.0.1
