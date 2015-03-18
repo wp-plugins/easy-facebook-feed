@@ -34,12 +34,14 @@ include_once "includes/options.include.php";
 //get facebook feed
 function eff_get_page_feed(){
 
+
     $defaults = array(
       'facebook_page_id' => 'bbcnews',
       'facebook_post_limit' => '5'
     );
 
-    $url = "https://graph.facebook.com/".get_option( 'eff_options', $defaults )['facebook_page_id']."/posts?access_token=226916994002335|ks3AFvyAOckiTA1u_aDoI4HYuuw&limit=".get_option( 'eff_options' )['facebook_post_limit'];
+    $options = get_option( 'eff_options', $defaults );
+    $url = "https://graph.facebook.com/".$options['facebook_page_id']."/posts?access_token=226916994002335|ks3AFvyAOckiTA1u_aDoI4HYuuw&limit=".$options['facebook_post_limit'];
     $json = file_get_contents($url);
     $feed = json_decode($json);
 
@@ -54,7 +56,8 @@ function eff_get_page(){
       'facebook_post_limit' => '5'
     );
 
-    $url = "https://graph.facebook.com/".get_option( 'eff_options', $defaults )['facebook_page_id'];
+    $options = get_option( 'eff_options', $defaults );
+    $url = "https://graph.facebook.com/".$options['facebook_page_id'];
     $json = file_get_contents($url);
     $page = json_decode($json);
 

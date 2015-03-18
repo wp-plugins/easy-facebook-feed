@@ -4,9 +4,9 @@ Author: Tim Wassenburg
 Donate link: http://stormware.nl
 Tags: facebook, feed
 Requires at least: 3.0.1
-Tested up to: 3.4
+Tested up to: 4.1
 Stable tag: 4.3
-Version: 0.1
+Version: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,9 @@ Your facebook id can be found in the url of your facebook page, for example: htt
 1. Example of how Easy Facebook feed looks in action.
 
 == Changelog ==
+
+= 0.2 =
+* Solved a small bug that occurred with older php versions.
 
 = 0.1 =
 * First release
