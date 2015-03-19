@@ -2,8 +2,8 @@
 /**
 * Plugin Name: Easy Facebook Feed
 * Plugin URI: http://stormware.nl/
-* Description: It shows your facebook feed on a wordpress page
-* Version: 0.2
+* Description: Easy Facebook Feed shows your facebook feed on a wordpress page in a easy way
+* Version: 0.3
 * Author: Tim Wassenburg
 * Author URI: http://stormware.nl/
 * License: GPLv2 or later

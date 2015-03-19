@@ -44,11 +44,15 @@ function eff_make_photo($data, $page){
                 <div class='row'>
                     <div class='col-md-12'>";
                         $photo .= (isset($data->message) ? "<p>".$data->message."</p>" : '');
-                        if (strpos($data->picture,'v/t1.0-9/p130x130/')) {
-                            $photo .= "<img src='".str_replace("v/t1.0-9/p130x130/", "", $data->picture) ."' alt='Facebook photo' style='max-width:100%' >";
-                        } elseif(strpos($data->picture,'v/t1.0-9/s130x130/')) {
-                            $photo .= "<img src='".str_replace("v/t1.0-9/s130x130/", "", $data->picture) ."' alt='Facebook photo' style='max-width:100%' >";
+
+                        if(isset($data->object_id)){
+                            $url3 = "http://graph.facebook.com/". $data->object_id ."?fields=images";
+                            $json3 = file_get_contents($url3);
+                            $feed3 = json_decode($json3);
+
+                            $photo .= "<img src=".$feed3->images['0']->source." alt='Facebook photo' style='max-width:100%' >";
                         }
+
                         $photo .= "
                     </div>
                 </div>
@@ -127,15 +131,20 @@ function eff_make_link($data, $page){
                         $link .= "
                             <div class='panel panel-default'>
                                 <div class='panel-heading'>
-                                    <div class='row'>
-                                    <div class='col-md-4'>
-                                        <img src='$data->picture' alt='Link photo' style='max-width:100%' >
-                                    </div>
-                                    <div class='col-md-8'>
+                                    <div class='row'>";
+                                        if(isset($data->picture)){ $link .= "
+                                        <div class='col-md-4'>
+                                            <img src='$data->picture' alt='Link photo' style='max-width:100%' >
+                                        </div>
+                                        <div class='col-md-8'>";
+                                        } else { $link .= 
+                                        "<div class='col-md-12'>";
+                                        }
+                                        $link .= "
                                         <p><a href='{$data->link}' target='_blank'> {$data->name}</a></p>";
                                         $link .= (isset($data->description) ? "$data->description" : '');
                                         $link .= "
-                                    </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
