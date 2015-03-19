@@ -10,7 +10,7 @@ Version: 0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-With this plugin you can get your facebook posts on your wordpress website.
+With Easy Facebook Feed you can get your facebook posts on your wordpress website in a easy way.
 
 == Description ==
 
