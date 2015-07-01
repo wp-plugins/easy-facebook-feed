@@ -57,7 +57,7 @@ function eff_get_page(){
     );
 
     $options = get_option( 'eff_options', $defaults );
-    $url = "https://graph.facebook.com/".$options['facebook_page_id'];
+    $url = "https://graph.facebook.com/".$options['facebook_page_id']."?access_token=226916994002335|ks3AFvyAOckiTA1u_aDoI4HYuuw";
     $json = file_get_contents($url);
     $page = json_decode($json);
 
