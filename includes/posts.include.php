@@ -46,7 +46,7 @@ function eff_make_photo($data, $page){
                         $photo .= (isset($data->message) ? "<p>".$data->message."</p>" : '');
 
                         if(isset($data->object_id)){
-                            $url3 = "http://graph.facebook.com/". $data->object_id ."?fields=images";
+                            $url3 = "https://graph.facebook.com/". $data->object_id ."?fields=images&access_token=226916994002335|ks3AFvyAOckiTA1u_aDoI4HYuuw";
                             $json3 = file_get_contents($url3);
                             $feed3 = json_decode($json3);
 
