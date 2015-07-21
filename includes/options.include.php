@@ -115,7 +115,7 @@ class MySettingsPage
      */
     public function print_section_info()
     {
-        print 'Add [easy_facebook_feed] on your page to display the facebook feed.';
+        print '<p>Add [easy_facebook_feed] on your page to display the facebook feed on your page. Or you can add the Easy Facebook Feed widget to your widget area.</p>';
     }
 
     /** 
