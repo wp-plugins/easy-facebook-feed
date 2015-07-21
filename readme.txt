@@ -5,8 +5,8 @@ Donate link: http://stormware.nl
 Tags: facebook, feed
 Requires at least: 3.0.1
 Tested up to: 4.2.2
-Stable tag: 0.4
-Version: 0.4
+Stable tag: 0.5
+Version: 0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,10 +16,12 @@ With this plugin you can get your facebook posts on your wordpress website.
 
 Get your facebook posts on your Wordpress website in a easy way. Features in Easy Facebook feed include:
 
-*   Responsive layout.
-*	Uses the colors of your theme
 *   Displays shared links, video's, status updates and photo's from your Facebook page.
+*   Responsive layout.
+*	Uses the colors of your theme.
 *   Adjustable number of posts.
+*   Usable as full page.
+*   Usable as widget.
 *	Easy to use.
 
 == Installation ==
@@ -42,6 +44,10 @@ Your facebook id can be found in the url of your facebook page, for example: htt
 1. Example of how Easy Facebook feed looks in action.
 
 == Changelog ==
+
+= 0.5 =
+* Added widget support
+* Added settings shortcut on plugin page.
 
 = 0.4 =
 * Facebook made some graph changed causing errors in Easy Facebook Feed.

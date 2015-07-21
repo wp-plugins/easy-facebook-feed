@@ -3,7 +3,7 @@
 * Plugin Name: Easy Facebook Feed
 * Plugin URI: http://stormware.nl/
 * Description: Easy Facebook Feed shows your facebook feed on a wordpress page in a easy way
-* Version: 0.4
+* Version: 0.5
 * Author: Tim Wassenburg
 * Author URI: http://stormware.nl/
 * License: GPLv2 or later
@@ -31,10 +31,10 @@ include_once "includes/posts.include.php";
 // include admin options
 include_once "includes/options.include.php";
 
+include_once "widget.php";
+
 //get facebook feed
 function eff_get_page_feed(){
-
-
     $defaults = array(
       'facebook_page_id' => 'bbcnews',
       'facebook_post_limit' => '5'
@@ -50,7 +50,6 @@ function eff_get_page_feed(){
 
 // get page information
 function eff_get_page(){
-
     $defaults = array(
       'facebook_page_id' => 'bbcnews',
       'facebook_post_limit' => '5'
@@ -65,7 +64,6 @@ function eff_get_page(){
 }
 
 // add stylesheet
-add_action( 'wp_enqueue_scripts', 'eff_stylesheet' );
 function eff_stylesheet() {
     wp_register_style( 'eff_bootstrap', plugins_url('css/eff_bootstrap.min.css?8', __FILE__) );
     wp_register_style( 'eff_style', plugins_url('css/eff_style.css?8', __FILE__) );
@@ -73,9 +71,18 @@ function eff_stylesheet() {
     wp_enqueue_style( 'eff_style' );
     wp_enqueue_style( 'eff-font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', array(), '4.2.0' );
 }
+add_action( 'wp_enqueue_scripts', 'eff_stylesheet' );
+
+// add settings shortcut
+function plugin_add_settings_link( $links ) {
+    $settings_link = '<a href="options-general.php?page=easy-facebook-feed">' . __( 'Settings' ) . '</a>';
+    array_push( $links, $settings_link );
+    return $links;
+}
+$plugin = plugin_basename( __FILE__ );
+add_filter( "plugin_action_links_$plugin", 'plugin_add_settings_link' );
 
 function eff_easy_facebook_feed( $atts ){
-
 	$feed = eff_get_page_feed();
     $page = eff_get_page();
     $return = null;
