@@ -2,7 +2,7 @@
 Contributors: timwass
 Author: Tim Wassenburg
 Donate link: http://stormware.nl
-Tags: facebook, feed
+Tags: facebook, feed, widget
 Requires at least: 3.0.1
 Tested up to: 4.2.2
 Stable tag: 0.5
