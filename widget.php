@@ -26,7 +26,7 @@ class wpb_widget extends WP_Widget {
             echo $args['before_title'] . $title . $args['after_title'];
 
         // This is where you run the code and display the output
-        echo __( eff_easy_facebook_feed(), 'ffe_widget' );
+        echo __( eff_easy_facebook_feed(null), 'ffe_widget' );
         echo $args['after_widget'];
     }
 

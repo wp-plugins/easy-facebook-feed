@@ -36,7 +36,7 @@ function eff_make_photo($data, $page){
     $photo .= "
         <div class='panel panel-default'>
             <div class='panel-heading'>
-                <img src='{$page->cover->source}' alt='Facebook page cover' border=0 style='max-height:30px' > 
+                <img src='{$page->cover->source}' alt='Facebook page cover' border=0 style='max-height:30px' >
                 <a href='{$page->link}' class='transicion' target='_blank'> {$data->from->name} </a>
             </div>
             <div class='panel-body'>
@@ -46,7 +46,8 @@ function eff_make_photo($data, $page){
                         $photo .= (isset($data->message) ? "<p>".$data->message."</p>" : '');
 
                         if(isset($data->object_id)){
-                            $url3 = "https://graph.facebook.com/". $data->object_id ."?fields=images&access_token=226916994002335|ks3AFvyAOckiTA1u_aDoI4HYuuw";
+                            $accessToken = getAccessToken();
+                            $url3 = "https://graph.facebook.com/v2.4/". $data->object_id ."?fields=images&access_token=$accessToken";
                             $json3 = file_get_contents($url3);
                             $feed3 = json_decode($json3);
 

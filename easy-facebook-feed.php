@@ -3,7 +3,7 @@
 * Plugin Name: Easy Facebook Feed
 * Plugin URI: http://stormware.nl/
 * Description: Easy Facebook Feed shows your facebook feed on a wordpress page in a easy way
-* Version: 0.5
+* Version: 0.6
 * Author: Tim Wassenburg
 * Author URI: http://stormware.nl/
 * License: GPLv2 or later
@@ -25,6 +25,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
+
 // include facebook post functions
 include_once "includes/posts.include.php";
 
@@ -33,6 +34,10 @@ include_once "includes/options.include.php";
 
 include_once "widget.php";
 
+function getAccessToken(){
+    return '1492018151012834|U3qsH98pUZxv5watRRC4c-rg1rc';
+}
+
 //get facebook feed
 function eff_get_page_feed(){
     $defaults = array(
@@ -40,8 +45,9 @@ function eff_get_page_feed(){
       'facebook_post_limit' => '5'
     );
 
+    $accessToken = getAccessToken();
     $options = get_option( 'eff_options', $defaults );
-    $url = "https://graph.facebook.com/".$options['facebook_page_id']."/posts?access_token=226916994002335|ks3AFvyAOckiTA1u_aDoI4HYuuw&limit=".$options['facebook_post_limit'];
+    $url = "https://graph.facebook.com/".$options['facebook_page_id']."/posts?access_token={$accessToken}&limit=".$options['facebook_post_limit'];
     $json = file_get_contents($url);
     $feed = json_decode($json);
 
@@ -55,8 +61,10 @@ function eff_get_page(){
       'facebook_post_limit' => '5'
     );
 
+    $fields = 'link,name,cover';
+    $accessToken = getAccessToken();
     $options = get_option( 'eff_options', $defaults );
-    $url = "https://graph.facebook.com/".$options['facebook_page_id']."?access_token=226916994002335|ks3AFvyAOckiTA1u_aDoI4HYuuw";
+    $url = "https://graph.facebook.com/v2.4/".$options['facebook_page_id']."?fields={$fields}&access_token={$accessToken}";
     $json = file_get_contents($url);
     $page = json_decode($json);
 

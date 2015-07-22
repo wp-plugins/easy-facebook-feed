@@ -5,8 +5,8 @@ Donate link: http://stormware.nl
 Tags: facebook, feed, widget
 Requires at least: 3.0.1
 Tested up to: 4.2.2
-Stable tag: 0.5
-Version: 0.5
+Stable tag: 0.6
+Version: 0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,9 @@ Your facebook id can be found in the url of your facebook page, for example: htt
 1. Example of how Easy Facebook feed looks in action.
 
 == Changelog ==
+
+= 0.6 =
+* Facebook graph api update
 
 = 0.5 =
 * Added widget support
