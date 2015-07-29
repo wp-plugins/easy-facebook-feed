@@ -27,17 +27,19 @@ Get your facebook posts on your Wordpress website in a easy way. Features in Eas
 
 == Installation ==
 
-= Display as page =
+= Installation =
 1. Upload `easy-facebook-feed` to the `/wp-content/plugins/` directory,
 2. Activate the plugin through the 'Plugins' menu in WordPress,
 3. Go to the Easy Facebook settings and add your own Facebook ID,
+
+= Display as page =
 4. Place `[easy_facebook_feed]` on your page,
 5. Optional: if you want to use different feeds on different pages you can add parameters to the shortcode,
-for example: `[easy_facebook_feed id="bbcnews" limit="3"]`, these parameters will overwrite your default admin options
+for example: `[easy_facebook_feed id=bbcnews limit=3]`.
 
 = Display as widget =
-1. Go to Appearance -> Widgets,
-2. Add the Easy Facebook Feed widget to your widget area
+4. Go to Appearance -> Widgets,
+5. Add the Easy Facebook Feed widget to your widget area
 
 And thats it, you are done!
 
