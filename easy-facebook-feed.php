@@ -2,8 +2,8 @@
 /**
 * Plugin Name: Easy Facebook Feed
 * Plugin URI: http://stormware.nl/
-* Description: Easy Facebook Feed shows your facebook feed on a wordpress page in a easy way
-* Version: 0.6
+* Description: Easy Facebook Feed shows your facebook feed in a easy way
+* Version: 0.7
 * Author: Tim Wassenburg
 * Author URI: http://stormware.nl/
 * License: GPLv2 or later
@@ -38,16 +38,21 @@ function getAccessToken(){
     return '1492018151012834|U3qsH98pUZxv5watRRC4c-rg1rc';
 }
 
-//get facebook feed
-function eff_get_page_feed(){
+function eff_getOptions(){
     $defaults = array(
-      'facebook_page_id' => 'bbcnews',
-      'facebook_post_limit' => '5'
+        'facebook_page_id' => 'bbcnews',
+        'facebook_post_limit' => '5'
     );
 
-    $accessToken = getAccessToken();
     $options = get_option( 'eff_options', $defaults );
-    $url = "https://graph.facebook.com/".$options['facebook_page_id']."/posts?access_token={$accessToken}&limit=".$options['facebook_post_limit'];
+
+    return $options;
+}
+
+//get facebook feed
+function eff_get_page_feed($pageId, $postLimit){
+    $accessToken = getAccessToken();
+    $url = "https://graph.facebook.com/{$pageId}/posts?access_token={$accessToken}&limit={$postLimit}";
     $json = file_get_contents($url);
     $feed = json_decode($json);
 
@@ -55,16 +60,10 @@ function eff_get_page_feed(){
 }
 
 // get page information
-function eff_get_page(){
-    $defaults = array(
-      'facebook_page_id' => 'bbcnews',
-      'facebook_post_limit' => '5'
-    );
-
+function eff_get_page($pageId){
     $fields = 'link,name,cover';
     $accessToken = getAccessToken();
-    $options = get_option( 'eff_options', $defaults );
-    $url = "https://graph.facebook.com/v2.4/".$options['facebook_page_id']."?fields={$fields}&access_token={$accessToken}";
+    $url = "https://graph.facebook.com/v2.4/{$pageId}?fields={$fields}&access_token={$accessToken}";
     $json = file_get_contents($url);
     $page = json_decode($json);
 
@@ -91,8 +90,15 @@ $plugin = plugin_basename( __FILE__ );
 add_filter( "plugin_action_links_$plugin", 'plugin_add_settings_link' );
 
 function eff_easy_facebook_feed( $atts ){
-	$feed = eff_get_page_feed();
-    $page = eff_get_page();
+    $options = eff_getOptions();
+
+    $shortcode_atts = shortcode_atts( array(
+        'id' => $options['facebook_page_id'],
+        'limit' => $options['facebook_post_limit'],
+    ), $atts );
+
+	$feed = eff_get_page_feed($shortcode_atts['id'], $shortcode_atts['limit']);
+    $page = eff_get_page($shortcode_atts['id']);
     $return = null;
 
     foreach ($feed->data as $key => $data) {

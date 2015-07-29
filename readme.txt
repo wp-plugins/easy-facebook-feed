@@ -2,21 +2,22 @@
 Contributors: timwass
 Author: Tim Wassenburg
 Donate link: http://stormware.nl
-Tags: facebook, feed, widget
+Tags: facebook, feed, widget, plugin, page, shortcode
 Requires at least: 3.0.1
-Tested up to: 4.2.2
-Stable tag: 0.6
-Version: 0.6
+Tested up to: 4.2.3
+Stable tag: 0.7
+Version: 0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-With this plugin you can get your facebook posts on your wordpress website.
+With this plugin you can get your facebook posts on your Wordpress website.
 
 == Description ==
 
 Get your facebook posts on your Wordpress website in a easy way. Features in Easy Facebook feed include:
 
 *   Displays shared links, video's, status updates and photo's from your Facebook page.
+*   Multiple feeds
 *   Responsive layout.
 *	Uses the colors of your theme.
 *   Adjustable number of posts.
@@ -26,12 +27,19 @@ Get your facebook posts on your Wordpress website in a easy way. Features in Eas
 
 == Installation ==
 
+Display as page:
 1. Upload `easy-facebook-feed` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Go to the Easy Facebook settings and add your own Facebook ID
 1. Place `[easy_facebook_feed]` on your page
+1. Optional: if you want to use different feeds on different pages you can add parameters to the shortcode,
+for example: `[easy_facebook_feed id="bbcnews" limit="3"]`, 'id' the parameters will overwrite your default admin options
 
-And thats it, you are done! View the page to see the result.
+Display as widget:
+1. Go to Appearance -> Widgets
+1. Add the Easy Facebook Feed widget to your widget area
+
+And thats it, you are done!
 
 == Frequently Asked Questions ==
 
@@ -44,6 +52,9 @@ Your facebook id can be found in the url of your facebook page, for example: htt
 1. Example of how Easy Facebook feed looks in action.
 
 == Changelog ==
+
+= 0.7 =
+* Added support for multiple Facebook feeds
 
 = 0.6 =
 * Facebook graph api update
